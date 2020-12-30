@@ -15,6 +15,7 @@
 		3AAD3FA5259D2ADD0012EA7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD3FA4259D2ADD0012EA7C /* Assets.xcassets */; };
 		3AAD3FA8259D2ADD0012EA7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AAD3FA6259D2ADD0012EA7C /* LaunchScreen.storyboard */; };
 		3AAD3FB2259D2BA10012EA7C /* Champion+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD3FB0259D2BA10012EA7C /* Champion+CoreDataClass.swift */; };
+		3AAD3FB7259D35040012EA7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAD3FB6259D35040012EA7C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3AAD3FA7259D2ADD0012EA7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AAD3FA9259D2ADD0012EA7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AAD3FB0259D2BA10012EA7C /* Champion+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Champion+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3AAD3FB6259D35040012EA7C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3AAD3FA6259D2ADD0012EA7C /* LaunchScreen.storyboard */,
 				3AAD3FA9259D2ADD0012EA7C /* Info.plist */,
 				3AAD3FA1259D2AD70012EA7C /* CoreDataPractice1.xcdatamodeld */,
+				3AAD3FB6259D35040012EA7C /* DetailViewController.swift */,
 			);
 			path = CoreDataPractice1;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 				3AAD3F9D259D2AD70012EA7C /* ViewController.swift in Sources */,
 				3AAD3FA3259D2AD70012EA7C /* CoreDataPractice1.xcdatamodeld in Sources */,
 				3AAD3F99259D2AD70012EA7C /* AppDelegate.swift in Sources */,
+				3AAD3FB7259D35040012EA7C /* DetailViewController.swift in Sources */,
 				3AAD3FB2259D2BA10012EA7C /* Champion+CoreDataClass.swift in Sources */,
 				3AAD3F9B259D2AD70012EA7C /* SceneDelegate.swift in Sources */,
 			);

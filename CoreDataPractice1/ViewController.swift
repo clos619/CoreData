@@ -41,14 +41,16 @@ class ViewController: UIViewController {
         }
     }
 
-//    @IBAction func goToDetail(_ sender: Any) {
-//        
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let detailVC = storyboard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
-//        
-//        self.navigationController?.pushViewController(detailVC, animated: true)
-//        
-//    }
+
+    @IBAction func viewDetails(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle:  nil)
+                let detailVC = storyboard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
+               
+        
+        
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
     
     @IBAction func addChampion(_ sender: Any) {
         let alert = UIAlertController(title: "Add Champion", message: "Enter Details", preferredStyle: .alert)
