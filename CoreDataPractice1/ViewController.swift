@@ -1,31 +1,34 @@
 //
 //  ViewController.swift
-//  CoreDATATA
 //
 //  Created by Field Employee on 12/28/20.
 //
 
 import UIKit
+import CoreData
+
+protocol DataSendingDelegate{
+    func sendUserInfo(data: String)
+
+}
 
 class ViewController: UIViewController {
+    
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var coreTableView: UITableView!
     var champ = [Champion]()
-    
+    var delegate: DataSendingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.coreTableView.delegate = self
         self.coreTableView.dataSource = self
-//        let newChamp = Champion(context: self.context)
-//        newChamp.name = "albert"
-//        newChamp.age = 22
-//        newChamp.attunement = "darkside"
-//
-//        try! self.context.save()
+        
         self.getChampions()
+        self.getChampionDetails()
 
+        
     
     }
     func getChampions(){
@@ -40,14 +43,25 @@ class ViewController: UIViewController {
             
         }
     }
+    func getChampionDetails(){
+        do{
+            let request : NSFetchRequest<Champion> = Champion.fetchRequest()
+            request.predicate = NSPredicate(format: "name == %@")
+            let champions = try context.fetch(Champion.fetchRequest())
+            for i in champions{
+                print(champ[0].name!)
+            }
+        }catch{
+            print("couldnt fetch champion details")
+        }
+    }
 
 
     @IBAction func viewDetails(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle:  nil)
                 let detailVC = storyboard.instantiateViewController(identifier: "DetailViewController") as! DetailViewController
-               
-        
+
         
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
@@ -82,7 +96,7 @@ class ViewController: UIViewController {
 //            newChamp.weight = Int32(weightField.text!)!
             newChamp.move = moveField.text
 //            newChamp.type = typeField.text
-            
+           
             do{
                 try self.context.save()
             }catch{
@@ -115,6 +129,9 @@ extension ViewController : UITableViewDelegate{
         let saveButton = UIAlertAction(title: "Save champ", style: .default){(action)in}
         alert.addAction(saveButton)
         self.present(alert, animated: true, completion: nil)
+        
+        let detailVC = DetailViewController()
+        detailVC.nameField.text = champ[indexPath.row].name
 
 
     }
@@ -149,6 +166,4 @@ extension ViewController : UITableViewDataSource{
         cell.textLabel?.text = champ.name
         return cell
     }
-
 }
-

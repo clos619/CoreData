@@ -7,7 +7,11 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+
+
+class DetailViewController: UIViewController, DataSendingDelegate {
+    
+    
 
     @IBOutlet weak var nameField: UITextField!
     
@@ -18,39 +22,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var attunementLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
-    
-    var type: String = "loading type"
-    var move: String?
-    var name: String?
-    var height: String?
-    var weight: String?
-    var age: String?
-    var attunement: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let vc = ViewController()
         
-        self.typeLabel.text = self.type
-        self.moveLabel.text = self.move
-        self.nameField.text = self.name
-        self.heightLabel.text = height
-        self.weightLabel.text = weight
-        self.attunementLabel.text = attunement
-        self.ageLabel.text = age
-        
-
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    func sendUserInfo(data: String) {
+        nameField.text = data
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showData"{
+            let vc: ViewController = segue.destination as! ViewController
+            vc.delegate = self
+        }
     }
-    */
 
 }

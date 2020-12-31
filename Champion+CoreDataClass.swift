@@ -12,4 +12,6 @@ import CoreData
 @objc(Champion)
 public class Champion: NSManagedObject {
 
+    
+    
 }
