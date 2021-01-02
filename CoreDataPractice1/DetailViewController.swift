@@ -9,11 +9,11 @@ import UIKit
 
 
 
-class DetailViewController: UIViewController, DataSendingDelegate {
+class DetailViewController: UIViewController {
     
     
 
-    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var nameField: UILabel!
     
     
     @IBOutlet weak var typeLabel: UILabel!
@@ -23,21 +23,19 @@ class DetailViewController: UIViewController, DataSendingDelegate {
     @IBOutlet weak var attunementLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
 
-    
+    var name: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let vc = ViewController()
-        
-        
+        nameField.text = name
     }
-    func sendUserInfo(data: String) {
-        nameField.text = data
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showData"{
-            let vc: ViewController = segue.destination as! ViewController
-            vc.delegate = self
-        }
-    }
+//    func sendUserInfo(data: String) {
+//        nameField.text = data
+//    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showData"{
+//            let vc: ViewController = segue.destination as! ViewController
+//            vc.delegate = self
+//        }
+//    }
 
 }
