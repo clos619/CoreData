@@ -103,8 +103,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func editChampions(_ sender: Any) {
-        let rows = IndexPath(row: champ.count-1, section: 0)
-        let champion = self.champ[rows.row]
+        
+       // let cell = self.coreTableView.visibleCells
+      // let indexPath: IndexPath = coreTableView.indexPath(for: cell)!
+        //let rows = IndexPath(row: cell.count-1, section: 0)
+        
+        let indexPath: IndexPath = coreTableView.indexPathForSelectedRow!
+        let champion = self.champ[indexPath.row]
         
                 let alert = UIAlertController(title: "EDIT", message: "EDIT NAMES", preferredStyle: .alert)
                 alert.addTextField()
@@ -115,6 +120,8 @@ class ViewController: UIViewController {
                 let saveButton = UIAlertAction(title: "Save champ", style: .default){(action)in}
                 alert.addAction(saveButton)
                 self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     
